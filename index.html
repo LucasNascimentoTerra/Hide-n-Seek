@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/theme.css">
+    <title>micro:bit Hide N Seek Setup</title>
+</head>
+<body>
+    <div class="centered-container">
+    <form id="microbitForm">
+
+        <div id="microbitSetup">
+            <div class="form-group">
+                <label for="num_seekers">Number of Seeking micro:bits:</label>
+                <input type="number" id="num_seekers" name="num_seekers" required>
+            </div>
+
+            <div class="form-group">
+                <label for="num_beacons">Number of Hidden micro:bits:</label>
+                <input type="number" id="num_beacons" name="num_beacons" required>
+            </div>
+            <button id="continueButton" type="button" onclick="showQuestionsForm()">Continue</button>
+            <button id="downloadButton" type="button" onclick="downloadRetriever()">Help, I've lost a micro:bit!</button>
+            
+        </div>
+        <div id="questionsContainer">
+        </div>
+    </form>
+</div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
