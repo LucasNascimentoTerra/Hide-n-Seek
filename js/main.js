@@ -1,3 +1,12 @@
+// Multiple choice label array.
+const optionLabels = ['A', 'B', 'C', 'D'];
+
+// Toggle '.inverted' class.
+function toggleColorInversion() {
+    var element = document.body;
+    element.classList.toggle("inverted");
+}
+
 function showQuestionsForm() {
     const numBeacons = document.getElementById('num_beacons').value;
     if (numBeacons && !isNaN(numBeacons) && numBeacons > 0) {
@@ -59,7 +68,7 @@ for (let i = 1; i <= 4; i++) {
     correct.style.marginRight = '4px';  /* Adjust this value as needed */
     
     const correctLabel = document.createElement('label');
-    correctLabel.textContent = 'Answer';
+    correctLabel.textContent = `${optionLabels[i - 1]}) `;
     correctLabel.style.marginLeft = '5px'; // Adjusted this to marginLeft for space after the radio button
 
     const input = document.createElement('input');
@@ -99,19 +108,23 @@ div.className = 'form-group';
     const questionLabel = document.createElement('label');
     questionLabel.htmlFor = `question_${i + 1}`;
     questionLabel.textContent = `Question ${i + 1}:`;
+    questionLabel.className = 'question-label';
     
     const questionInput = document.createElement('input');
     questionInput.type = 'text';
     questionInput.id = `question_${i + 1}`;
     questionInput.name = `question_${i + 1}`;
+    questionInput.className = 'question-input';
     
     const typeLabel = document.createElement('label');
     typeLabel.htmlFor = `type_${i + 1}`;
     typeLabel.textContent = `Type for Question ${i + 1}:`;
+    typeLabel.className = 'type-label';
 
     const typeSelect = document.createElement('select');
     typeSelect.id = `type_${i + 1}`;
     typeSelect.name = `type_${i + 1}`;
+    typeSelect.className = 'type-select';
     typeSelect.onchange = () => createAnswerInputs(div, typeSelect.value, i + 1);
 
     const trueFalseOption = document.createElement('option');
